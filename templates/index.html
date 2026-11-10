@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My To-Do List</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/style.css') }}">
+</head>
+<body>
+
+    <div class="container">
+
+        <header>
+            <h1>My Tasks <span>✓</span></h1>
+            <p>Organize your day, one task at a time.</p>
+        </header>
+
+        <section class="stats">
+            <div class="stat-card">
+                <h2 id="total-count">0</h2>
+                <p>Total Tasks</p>
+            </div>
+
+            <div class="stat-card">
+                <h2 id="completed-count">0</h2>
+                <p>Completed</p>
+            </div>
+
+            <div class="stat-card">
+                <h2 id="pending-count">0</h2>
+                <p>Pending</p>
+            </div>
+        </section>
+
+        <section class="add-section">
+            <form id="todo-form">
+                <input
+                    type="text"
+                    id="todo-input"
+                    placeholder="What needs to be done?"
+                    maxlength="200"
+                    required
+                >
+                <button type="submit">+ Add Task</button>
+            </form>
+        </section>
+
+        <section class="tasks-section">
+            <div class="section-heading">
+                <h2>Your Tasks</h2>
+                <button id="refresh-btn" class="refresh-btn">Refresh</button>
+            </div>
+
+            <p id="message"></p>
+
+            <ul id="todo-list"></ul>
+
+            <div id="empty-state" class="empty-state">
+                <div class="empty-icon">📝</div>
+                <h3>No tasks yet!</h3>
+                <p>Add your first task to get started.</p>
+            </div>
+        </section>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='/js/app.js') }}"></script>
+</body>
+</html>
